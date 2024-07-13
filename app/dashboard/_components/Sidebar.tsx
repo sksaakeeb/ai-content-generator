@@ -1,6 +1,8 @@
+"use client";
 import { FileClock, Home, Settings, WalletCards } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
 
 function Sidebar() {
   const MenuList = [
@@ -26,6 +28,11 @@ function Sidebar() {
     },
   ];
 
+  const path = usePathname();
+  useEffect(() => {
+    console.log(path);
+  });
+
   return (
     <div className="h-screen p-5 shadow-sm border">
       <div className="flex justify-center">
@@ -34,7 +41,11 @@ function Sidebar() {
 
       <div className="mt-10">
         {MenuList.map((menu, index) => (
-          <div className="flex gap-2 p-2 mb-3 hover:bg-primary hover:text-white rounded-lg cursor-pointer">
+          <div
+            className={`flex gap-2 p-2 mb-3 hover:bg-primary hover:text-white rounded-lg cursor-pointer ${
+              path == menu.path && "bg-primary text-white"
+            }`}
+          >
             <menu.icon />
             <h2>{menu.name}</h2>
           </div>
