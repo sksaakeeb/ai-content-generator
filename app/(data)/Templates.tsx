@@ -105,7 +105,7 @@ export default [
     ],
   },
   {
-    name: "Blog title",
+    name: "hashtag title",
     desc: "An AI tool that generates blog title depending on your blog posts",
     icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
     category: "Blog",
@@ -147,7 +147,7 @@ export default [
     ],
   },
   {
-    name: "Blog title",
+    name: "Youtube title",
     desc: "An AI tool that generates blog title depending on your blog posts",
     icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
     category: "Blog",
