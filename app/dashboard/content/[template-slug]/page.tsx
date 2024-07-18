@@ -6,15 +6,19 @@ import { TEMPLATE } from "../../_components/TemplateListSection";
 import Templates from "@/app/(data)/Templates";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowBigLeft, ArrowLeft } from "lucide-react";
-import { json } from "stream/consumers";
+import { ArrowLeft } from "lucide-react";
 import { chatSession } from "@/utils/AiModal";
+import { db } from "@/utils/db";
+import { useUser } from "@clerk/nextjs";
+import moment from "moment";
+import { AIOutput } from "@/utils/schema";
 
 interface PROPS {
   params: {
     "template-slug": string;
   };
 }
+
 function CreateNewContent(props: PROPS) {
 
   const selectedTemplate: TEMPLATE | undefined = Templates.find(
@@ -22,20 +26,30 @@ function CreateNewContent(props: PROPS) {
   );
 
   const [loading, setLoading] = useState(false);
-
   const [aiOutput, setAiOutput] = useState<string>('');
+  const { user } = useUser();
 
   const generateAiContent = async (formData: any) => {
     setLoading(true);
     const selectedPrompt = selectedTemplate?.aiPrompt;
-
     const finalAiPrompt = JSON.stringify(formData) + ", " + selectedPrompt;
-
     const result = await chatSession.sendMessage(finalAiPrompt);
 
-    console.log(result.response.text());
-    setAiOutput(result.response.text());
+    setAiOutput(result?.response.text());
+    await SaveInDb(JSON.stringify(formData), selectedTemplate?.slug, result?.response.text());
     setLoading(false);
+  }
+
+  const SaveInDb = async (formData: any, slug: any, aiResp: string) => {
+    const result = await db.insert(AIOutput).values({
+      formData: formData,
+      templateSlug: slug,
+      aiResponse: aiResp,
+      createdBy: user?.primaryEmailAddress?.emailAddress,
+      createdAt: moment().format('DD/MM/YYYY')
+    });
+
+    console.log(result);
   }
 
   return (
@@ -51,7 +65,7 @@ function CreateNewContent(props: PROPS) {
 
         <div className="col-span-2">
           {/* Output section  */}
-          <OutputSection aiOutput={aiOutput}/>
+          <OutputSection aiOutput={aiOutput} />
         </div>
       </div>
     </div>
