@@ -13,6 +13,8 @@ function Dashboard() {
       {/* Template list section */}
       <TemplateListSection userSearchInput = {userSearchInput}/>
     </div>
+
+    
   );
 }
 

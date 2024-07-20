@@ -1,8 +1,10 @@
 "use client";
 import { FileClock, Home, Settings, WalletCards } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
+import UsageTrack from "./UsageTrack";
 
 function Sidebar() {
   const MenuList = [
@@ -34,10 +36,12 @@ function Sidebar() {
   });
 
   return (
-    <div className="h-screen p-5 shadow-sm border">
-      <div className="flex justify-center">
+    <div className="h-screen relative p-5 shadow-sm border">
+      <Link href={'/dashboard'}>
+      <div className="flex justify-center cursor-pointer">
         <Image src={"/logo.svg"} alt="logo" width={100} height={100} />
       </div>
+      </Link>
 
       <div className="mt-10">
         {MenuList.map((menu, index) => (
@@ -50,6 +54,10 @@ function Sidebar() {
             <h2>{menu.name}</h2>
           </div>
         ))}
+      </div>
+
+      <div className="absolute bottom-10 left-0 w-full">
+        <UsageTrack />
       </div>
     </div>
   );
