@@ -2,7 +2,7 @@ export default [
   {
     name: "Blog Title Generator",
     desc: "An AI tool that generates blog titles based on your blog posts",
-    icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
+    icon: "https://cdn-icons-png.flaticon.com/128/1187/1187595.png",
     category: "Blog",
     slug: "generate-blog-title",
     aiPrompt: "Give me 5 blog topic ideas in bullet points",
@@ -23,7 +23,7 @@ export default [
   {
     name: "Hashtag Generator",
     desc: "An AI tool that generates relevant hashtags for your content",
-    icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
+    icon: "https://cdn-icons-png.flaticon.com/128/1628/1628649.png",
     category: "Social Media",
     slug: "generate-hashtags",
     aiPrompt: "Generate 10 relevant hashtags for my content",
@@ -39,7 +39,7 @@ export default [
   {
     name: "YouTube Title Generator",
     desc: "An AI tool that suggests engaging YouTube video titles",
-    icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
+    icon: "https://cdn-icons-png.flaticon.com/128/49/49084.png",
     category: "YouTube",
     slug: "generate-youtube-title",
     aiPrompt: "Suggest 5 YouTube video titles based on the given topic",
@@ -55,7 +55,7 @@ export default [
   {
     name: "Instagram Caption Generator",
     desc: "An AI tool that generates creative Instagram captions",
-    icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
+    icon: "https://cdn-icons-png.flaticon.com/128/1077/1077042.png",
     category: "Social Media",
     slug: "generate-instagram-caption",
     aiPrompt: "Give me 5 Instagram captions based on the given theme",
@@ -71,7 +71,7 @@ export default [
   {
     name: "SEO Meta Description Generator",
     desc: "An AI tool that generates SEO-friendly meta descriptions",
-    icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
+    icon: "https://cdn-icons-png.flaticon.com/128/6033/6033713.png",
     category: "SEO",
     slug: "generate-seo-meta",
     aiPrompt: "Generate a compelling SEO meta description for my website",
@@ -87,7 +87,7 @@ export default [
   {
     name: "Email Subject Line Generator",
     desc: "An AI tool that creates catchy email subject lines",
-    icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
+    icon: "https://cdn-icons-png.flaticon.com/128/2165/2165061.png",
     category: "Email Marketing",
     slug: "generate-email-subject",
     aiPrompt: "Generate 5 email subject lines based on the given topic",
@@ -103,7 +103,7 @@ export default [
   {
     name: "Ad Copy Generator",
     desc: "An AI tool that generates compelling ad copies",
-    icon: "https://cdn-icons-png.flaticon.com/128/3959/3959542.png",
+    icon: "https://cdn-icons-png.flaticon.com/128/7253/7253092.png",
     category: "Marketing",
     slug: "generate-ad-copy",
     aiPrompt: "Create an engaging ad copy for my product",
